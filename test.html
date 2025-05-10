@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>12-Month Grid</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 0;
+        padding: 20px;
+        background: #fff;
+      }
+
+      .month-grid {
+        display: flex;
+        flex-direction: column;
+        /* gap: 8px; */
+      }
+
+      .month-row {
+        display: flex;
+        align-items: center;
+      }
+
+      .month-label {
+        width: 30px;
+        font-size: 14px;
+        font-weight: 500;
+        margin-right: 8px;
+        color: #555;
+      }
+
+      .day {
+        width: 12px;
+        height: 12px;
+        background-color: #ebedf0;
+        margin: 2px;
+        border-radius: 2px;
+        transition: background-color 0.3s;
+      }
+
+      .day {
+        width: 14px;
+        height: 14px;
+        border-radius: 3px;
+        background-color: #ebedf0;
+        position: relative;
+        cursor: pointer;
+      }
+
+      .day:hover {
+        background-color: #216e39;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="month-grid" id="monthGrid"></div>
+
+    <script>
+      const months = [
+        { name: "Jan", days: 31 },
+        { name: "Feb", days: 28 },
+        { name: "Mar", days: 31 },
+        { name: "Apr", days: 30 },
+        { name: "May", days: 31 },
+        { name: "Jun", days: 30 },
+        { name: "Jul", days: 31 },
+        { name: "Aug", days: 31 },
+        { name: "Sep", days: 30 },
+        { name: "Oct", days: 31 },
+        { name: "Nov", days: 30 },
+        { name: "Dec", days: 31 },
+      ];
+
+      const grid = document.getElementById("monthGrid");
+
+      months.forEach((month) => {
+        const row = document.createElement("div");
+        row.className = "month-row";
+
+        const label = document.createElement("div");
+        label.className = "month-label";
+        label.textContent = month.name;
+        row.appendChild(label);
+
+        for (let i = 1; i <= month.days; i++) {
+          const day = document.createElement("div");
+          day.className = "day";
+          row.appendChild(day);
+        }
+
+        grid.appendChild(row);
+      });
+    </script>
+  </body>
+</html>

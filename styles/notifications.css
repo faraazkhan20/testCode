@@ -1,0 +1,73 @@
+.notification-success {
+  background: #8bc34a;
+  color: #ffffff;
+  box-shadow: 0 0 20px rgba(139, 195, 74, 0.8), /* stronger green glow */ 0 0 30px rgba(139, 195, 74, 0.5); /* softer outer glow */
+}
+.notification-danger {
+  background: #f44336;
+  color: #ffffff;
+  box-shadow: 0 0 20px rgba(244, 67, 54, 1), 0 0 30px rgba(244, 67, 54, 0.5); /* enhanced red glow */
+}
+.notification-warning {
+  background: #ff9800;
+  color: #ffffff;
+  box-shadow: 0 0 20px rgba(255, 152, 0, 1), 0 0 30px rgba(255, 152, 0, 0.5); /* enhanced orange glow */
+}
+.notification-info {
+  background: #2196f3;
+  color: #ffffff;
+  box-shadow: 0 0 20px rgba(33, 150, 243, 1), 0 0 30px rgba(33, 150, 243, 0.5); /* enhanced blue glow */
+}
+.notification {
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 10px 10px;
+  position: fixed;
+  top: 5%;
+  right: 28%;
+  left: 28%;
+  box-sizing: border-box;
+  border-radius: 4px;
+  text-align: left;
+  z-index: 999999;
+}
+
+/* media query for smaller screens */
+@media (max-width: 768px) {
+  .notification {
+    right: 5%;
+    left: 5%;
+  }
+}
+
+/* animation */
+.animateOpen {
+  z-index: 999999;
+  animation: moveOpen 4s forwards;
+}
+
+/* keyframes */
+@keyframes moveOpen {
+  0% {
+    transform: translate(0, -100px);
+  }
+  10% {
+    transform: translate(0, 20px);
+  }
+  12% {
+    transform: translate(0, 22px);
+  }
+  16% {
+    transform: translate(0, 20px);
+  }
+  80% {
+    transform: translate(0, 20px);
+  }
+  85% {
+    transform: translate(0, 25px);
+  }
+  100% {
+    transform: translate(0, -100px);
+  }
+}

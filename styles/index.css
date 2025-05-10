@@ -1,0 +1,62 @@
+body {
+  font-family: "Cascadia Code", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(53, 14px);
+  grid-template-rows: repeat(7, 14px);
+  gap: 3px;
+}
+
+.day {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  background-color: #ebedf0;
+  position: relative;
+  cursor: pointer;
+}
+
+.level-1 {
+  background-color: #c6e48b;
+}
+
+.level-2 {
+  background-color: #7bc96f;
+}
+
+.level-3 {
+  background-color: #239a3b;
+}
+
+.level-4 {
+  background-color: #196127;
+}
+
+.day:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  font-size: 10px;
+  padding: 4px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+  z-index: 10;
+}
+
+.container-custom {
+  margin: 40px;
+}
+
+/* customStyles */
+#day-04May2025 {
+  background-color: blue;
+}
